@@ -1,8 +1,9 @@
 -- create & assign database
 
-CREATE DATABASE bamazon_db
+DROP DATABASE IF EXISTS bamazon_db;
+CREATE DATABASE bamazon_db;
 
-USE bamazon_db
+USE bamazon_db;
 
 -- create product table and columns
 
@@ -10,8 +11,8 @@ CREATE TABLE products (
     item_id INTEGER AUTO_INCREMENT NOT NULL,
     product_name VARCHAR(100) NOT NULL,
     department_name VARCHAR(100) NOT NULL,
-    price DECIMAL(10,4) NOT NULL,
-    stock_quantity INTEGER NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    stock_quantity INTEGER(10) NOT NULL,
 
     PRIMARY KEY(item_id)
 );
@@ -26,7 +27,8 @@ VALUES
     ("Dire Wolf Chow", "Pets", 9.99, 50),
     ("Winterfell", "Real Estate", 9999999.99, 1),
     ("King's Landing", "Real Estate", 9999999.99, 1),
-    ("Dragon Glass", "Materials", 0.99, 500),
+    ("Strangler", "Poison", 29.99, 40),
+    ("Dragon Glass", "Materials", .50, 500),
     ("Valyrian Steel", "Materials", 99.99, 200);
 
 
