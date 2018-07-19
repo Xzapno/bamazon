@@ -46,7 +46,7 @@ function afterConnection() {
 
 function order() {
     // query the database for all items in stock
-    connection.query("SELECT * FROM bamazon_db", function(err, results) {
+    connection.query("SELECT * FROM products", function(err, results) {
     if (err) throw err;
 
     inquirer
@@ -56,7 +56,7 @@ function order() {
                 type: "rawlist",
                 choices: function() {
                     var choiceArray = [];
-                    for (var i = 0; i , results.length; i++) {
+                    for (var i = 0; i < results.length; i++) {
                         choiceArray.push(results[i].product_name);
                     }
                     return choiceArray;
@@ -69,6 +69,20 @@ function order() {
                 message: "How many would you like to purchase?"
             }
         ])
+
+        // .then(function(answer) {
+        //     var chosenItem;
+        //     for (var i = 0; i , results.length; i++) {
+        //         if (results[i].product_name === answer.choice) {
+        //             chosenItem = results[i];
+        //         }
+        //     }
+        // })
+
+        
+
+
+    
     });
 }
 
